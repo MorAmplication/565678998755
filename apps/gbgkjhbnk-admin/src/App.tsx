@@ -5,6 +5,10 @@ import { theme } from "./theme/theme";
 import Login from "./Login";
 import "./App.scss";
 import Dashboard from "./pages/Dashboard";
+import { MorList } from "./mor/MorList";
+import { MorCreate } from "./mor/MorCreate";
+import { MorEdit } from "./mor/MorEdit";
+import { MorShow } from "./mor/MorShow";
 import { UserList } from "./user/UserList";
 import { UserCreate } from "./user/UserCreate";
 import { UserEdit } from "./user/UserEdit";
@@ -35,6 +39,13 @@ const App = (): React.ReactElement => {
         dashboard={Dashboard}
         loginPage={Login}
       >
+        <Resource
+          name="Mor"
+          list={MorList}
+          edit={MorEdit}
+          create={MorCreate}
+          show={MorShow}
+        />
         <Resource
           name="User"
           list={UserList}

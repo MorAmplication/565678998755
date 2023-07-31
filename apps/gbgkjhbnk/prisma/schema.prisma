@@ -7,6 +7,15 @@ generator client {
   provider = "prisma-client-js"
 }
 
+model Mor {
+  id        String   @id @default(auto()) @map("_id") @mongo.ObjectId
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  password  String?
+  username  String   @unique
+  roles     Json
+}
+
 model User {
   id        String   @id @default(auto()) @map("_id") @mongo.ObjectId
   createdAt DateTime @default(now())
